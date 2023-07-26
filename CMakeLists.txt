@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.20)
+cmake_minimum_required(VERSION 3.20)
 project(IMGUI CXX)
 
 # include(FindCPPSources)
@@ -23,7 +23,7 @@ add_library(imgui STATIC ${PROJECT_SOURCE_DIR}/imgui.cpp
                          ${PROJECT_SOURCE_DIR}/imgui_demo.cpp
                          ${PROJECT_SOURCE_DIR}/imgui_tables.cpp
                          ${PROJECT_SOURCE_DIR}/imgui_widgets.cpp
-
+                         ${PROJECT_SOURCE_DIR}/backends/imgui_impl_opengl3.cpp
                          ${PROJECT_SOURCE_DIR}/backends/imgui_impl_glfw.cpp
                          )
 target_include_directories( imgui PUBLIC  ${PROJECT_SOURCE_DIR}
