@@ -24,11 +24,13 @@ add_library(imgui STATIC ${PROJECT_SOURCE_DIR}/imgui.cpp
                          ${PROJECT_SOURCE_DIR}/imgui_tables.cpp
                          ${PROJECT_SOURCE_DIR}/imgui_widgets.cpp
                          ${PROJECT_SOURCE_DIR}/backends/imgui_impl_opengl3.cpp
+                         ${PROJECT_SOURCE_DIR}/backends/imgui_impl_vulkan.cpp
                          ${PROJECT_SOURCE_DIR}/backends/imgui_impl_glfw.cpp
                          )
 target_include_directories( imgui PUBLIC  ${PROJECT_SOURCE_DIR}
-                                             ${PROJECT_SOURCE_DIR}/backens
+                                          ${PROJECT_SOURCE_DIR}/backens
+                                          ${Vulkan_INCLUDE_DIRS}
 
 )
 
-target_link_libraries( imgui PRIVATE glfw )
+target_link_libraries( imgui PRIVATE glfw ${Vulkan_LIBRARIES} )
